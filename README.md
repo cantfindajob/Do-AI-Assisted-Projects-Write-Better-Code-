@@ -1,5 +1,5 @@
-# Do AI-Assisted Projects Write Better Code? An Empirical Study on Internal Quality of Real-World GitHub Repositorie
 
+# Do AI-Assisted Projects Write Better Code? An Empirical Study on Internal Quality of Real-World GitHub Repositories
 
 This repository serves as the official replication package for our empirical study evaluating and comparing the maintainability and structural code quality of AI-generated versus Human-written software projects. 
 
@@ -32,4 +32,3 @@ The directory tree below maps the core data assets directly to the methodology a
 │   ├── [Variables Datasets]
 │   └── [PLS Results Files]
 └── README.md
-
