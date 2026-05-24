@@ -92,7 +92,7 @@ This RQ examines **severity-level issue density** and **estimated remediation ti
 
 - **Languages:** TypeScript, Python, JavaScript, Java
 - **Scales:** Small, Small-to-Medium, Medium, Large
-- **Severity Levels:** 5 levels (e.g., Blocker, Critical, Major, Minor, Info)
+- **Severity Levels:** 5 levels (Blocker, Critical, Major, Minor, Info)
 
 | File / Folder | Description |
 |---------------|-------------|
