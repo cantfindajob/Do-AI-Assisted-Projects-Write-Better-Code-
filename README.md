@@ -112,10 +112,10 @@ This RQ uses **Partial Least Squares (PLS)** regression to identify relationship
 
 | File | Description |
 |------|-------------|
-| `rq3.1.xlsx` | Independent variables data for each project (e.g., project size, age, contributor count, AI-assistance flag) |
-| `rq3.2.xlsx` | Dependent variables data for each project (e.g., issue density, severity scores) |
-| `PLS result 1.xlsx` | PLS path model results — first analysis (e.g., model fit, path coefficients) |
-| `PLS result 2.xlsx` | PLS path model results — second analysis (e.g., bootstrapping, significance testing) |
+| `rq3.1.xlsx` | The dependent variable is data on the problem density of 16 maintainability categories|
+| `rq3.2.xlsx` | The dependent variable is data with a density of 5 severity issues |
+| `Maintainability issue density pls-results.csv` | The PLS results corresponding to the rq3.1 file |
+| `Severity issue density pls-results.xlsx` | The PLS results corresponding to the rq3.2 file |
 
 ---
 
