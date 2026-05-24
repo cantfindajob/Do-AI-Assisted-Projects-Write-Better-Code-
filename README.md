@@ -1,126 +1,163 @@
-# Do AI-Assisted Projects Write Better Code? An Empirical Study on Maintainability
+# Do AI-Assisted Projects Write Better Code? — Maintainability Analysis
 
-> An empirical study investigating whether AI-assisted open-source projects produce more maintainable code than human-written projects, analyzed across four programming languages, four project scales, and three research questions.
+> An empirical study examining whether AI-assisted software projects exhibit better code maintainability than human-written projects, using static analysis across four programming languages and multiple project scales.
+
+---
+
+## 📌 Repository Overview
+
+This repository contains the dataset, experimental results, and analysis artifacts for the study:
+
+**"Do AI-Assisted Projects Write Better Code? A Maintainability Perspective"**
+
+We analyze maintainability issue density and severity across **AI-assisted** and **human-written** open-source projects using **SonarQube** static analysis, covering **4 programming languages**, **4 project scales**, **16 maintainability categories (C1–C16)**, and **5 severity levels**.
 
 ---
 
 ## 📁 Repository Structure
 
 ```
-Do-AI-Assisted-Projects-Write-Better-Code/
+Do-AI-Assisted-Projects-Write-Better-Code-/
 │
 ├── dataset/
 │   ├── Maintainability issues corresponding to each project.xlsx
 │   └── merged_repository_with_sonar_keys.xlsx
 │
 ├── RQ1 experimental results/
-│   ├── [small / small-to-medium / medium / large]/
-│   │   ├── typescript/
-│   │   ├── python/
-│   │   ├── javascript/
-│   │   └── java/
-│   │       └── (C1–C16 maintainability issue density per SonarQube project key)
+│   ├── [Language]_[Scale]/                    # 16 folders (4 langs × 4 scales)
+│   │   └── *.xlsx                             # C1–C16 issue density per project key
 │   ├── ALL_Mann_Whitney_Results.xlsx
 │   ├── heatmap.png
 │   ├── sonarqube_Default_maintainability_rules.xlsx
 │   └── The number of corresponding rules for each category c.xlsx
 │
 ├── RQ2 experimental results/
-│   ├── [small / small-to-medium / medium / large]/
-│   │   ├── typescript/
-│   │   ├── python/
-│   │   ├── javascript/
-│   │   └── java/
-│   │       └── (5 severity levels issue density per SonarQube project key)
+│   ├── [Language]_[Scale]/                    # 16 folders (4 langs × 4 scales)
+│   │   └── *.xlsx                             # 5 severity levels issue density per project
 │   ├── Average of various languages and scales Issue Density.xlsx
-│   └── matrix_plot_bold.png
+│   ├── matrix_plot_bold.png
+│   ├── Remediation Time.xlsx
+│   └── Remediation Time.png
 │
 ├── RQ3 experimental results/
 │   ├── rq3.1.xlsx
 │   ├── rq3.2.xlsx
-│   └── (PLS analysis result files)
+│   ├── PLS result 1.xlsx
+│   └── PLS result 2.xlsx
 │
 └── README.md
 ```
 
 ---
 
-## 📊 Dataset
+## 🗂️ Dataset Description
 
-Located in the `dataset/` folder:
+Located in `dataset/`
 
 | File | Description |
 |------|-------------|
-| `Maintainability issues corresponding to each project.xlsx` | All maintainability issues and their severity levels for each analyzed project |
-| `merged_repository_with_sonar_keys.xlsx` | Mapping of repository name, GitHub key, and SonarQube project key used for static analysis |
+| `Maintainability issues corresponding to each project.xlsx` | All projects with their corresponding maintainability issues and severity levels as detected by SonarQube |
+| `merged_repository_with_sonar_keys.xlsx` | Maps each repository name, GitHub key, and SonarQube project key (used to identify projects in the SonarQube dashboard) |
 
 ---
 
-## 🔬 Research Questions
+## 🔬 Research Questions & Experimental Results
 
-### RQ1: Maintainability Issue Density Analysis.
+### RQ1 — Do AI-assisted projects have different maintainability issue density across categories?
 
-The `RQ1 experimental results/` folder contains maintainability issue density data organized by:
+Located in `RQ1 experimental results/`
 
-- **4 Project Scales**: Small, Small-to-Medium, Medium, Large
-- **4 Programming Languages**: TypeScript, Python, JavaScript, Java
-- **16 Maintainability Categories**: C1–C16 (mapped from SonarQube default rule sets)
+This RQ investigates maintainability issue density across **16 categories (C1–C16)** for each project, broken down by:
 
-**Key files:**
+- **Languages:** TypeScript, Python, JavaScript, Java
+- **Scales:** Small, Small-to-Medium, Medium, Large
 
-| File | Description |
-|------|-------------|
-| Per-language/scale folders | Issue density per C1–C16 category for each SonarQube project key |
-| `ALL_Mann_Whitney_Results.xlsx` | Results of 256 pairwise Mann–Whitney U tests comparing AI vs. Human projects |
-| `heatmap.png` | Heatmap visualization of C1–C16 maintainability issue density across languages and scales for AI vs. Human projects |
+| File / Folder | Description |
+|---------------|-------------|
+| `[Language]_[Scale]/` | 16 sub-folders containing per-project issue density data for each of the C1–C16 maintainability categories, indexed by SonarQube project key |
+| `ALL_Mann_Whitney_Results.xlsx` | Results of **256 pairwise Mann-Whitney U tests** comparing AI vs. Human projects across all category × language × scale combinations |
+| `heatmap.png` | Heatmap visualizing maintainability issue density for AI vs. Human projects across C1–C16 categories, all languages, and all scales |
 | `sonarqube_Default_maintainability_rules.xlsx` | Default SonarQube maintainability rule sets for TypeScript, Python, JavaScript, and Java |
-| `The number of corresponding rules for each category c.xlsx` | Mapping of project rules to the C1–C16 category taxonomy (Table 1) |
+| `The number of corresponding rules for each category c.xlsx` | Mapping between C1–C16 categories and the number of applicable SonarQube rules used in this study (corresponds to Table 1 in the paper) |
+
+**Maintainability Categories (C1–C16)** cover dimensions such as code duplication, complexity, naming conventions, documentation, and more, as defined by SonarQube's default rule taxonomy.
 
 ---
 
-### RQ2 — RQ2:Issue Severity Density and Remediation Time Analysis.
+### RQ2 — Do AI-assisted projects differ in issue severity and remediation effort?
 
-The `RQ2 experimental results/` folder contains severity-level issue density data organized by:
+Located in `RQ2 experimental results/`
 
-- **4 Project Scales**: Small, Small-to-Medium, Medium, Large
-- **4 Programming Languages**: TypeScript, Python, JavaScript, Java
-- **5 Severity Levels**: (e.g., Info, Minor, Major, Critical, Blocker)
+This RQ examines **severity-level issue density** and **estimated remediation time** across:
 
-**Key files:**
+- **Languages:** TypeScript, Python, JavaScript, Java
+- **Scales:** Small, Small-to-Medium, Medium, Large
+- **Severity Levels:** 5 levels (e.g., Blocker, Critical, Major, Minor, Info)
 
-| File | Description |
-|------|-------------|
-| Per-language/scale folders | Issue density per severity level for each SonarQube project key |
+| File / Folder | Description |
+|---------------|-------------|
+| `[Language]_[Scale]/` | 16 sub-folders with per-project issue density data for each of the 5 severity levels, indexed by SonarQube project key |
 | `Average of various languages and scales Issue Density.xlsx` | Average severity-level issue density matrix across all languages and scales |
-| `matrix_plot_bold.png` | Matrix visualization of average severity issue density across scales and languages |
+| `matrix_plot_bold.png` | Visual matrix plot of average issue density per severity level, language, and scale |
+| `Remediation Time.xlsx` | Estimated remediation time (technical debt) per project as reported by SonarQube |
+| `Remediation Time.png` | Bar chart comparing average remediation time between AI-assisted and human-written projects across all languages and scales |
 
 ---
 
-### RQ3: Driver Analysis via PLS Regression.
+### RQ3 — What project-level factors influence maintainability outcomes?
 
-The `RQ3 experimental results/` folder contains data and model outputs for a Partial Least Squares (PLS) analysis examining the relationship between project-level factors and maintainability outcomes.
+Located in `RQ3 experimental results/`
+
+This RQ uses **Partial Least Squares (PLS)** regression to identify relationships between project characteristics (independent variables) and maintainability outcomes (dependent variables).
 
 | File | Description |
 |------|-------------|
-| `rq3.1.xlsx` | Independent variables (project characteristics / predictors) |
-| `rq3.2.xlsx` | Dependent variables (maintainability issue density outcomes) |
-| PLS result files | Output of two PLS regression models |
+| `rq3.1.xlsx` | Independent variables data for each project (e.g., project size, age, contributor count, AI-assistance flag) |
+| `rq3.2.xlsx` | Dependent variables data for each project (e.g., issue density, severity scores) |
+| `PLS result 1.xlsx` | PLS path model results — first analysis (e.g., model fit, path coefficients) |
+| `PLS result 2.xlsx` | PLS path model results — second analysis (e.g., bootstrapping, significance testing) |
 
 ---
 
-## 🛠️ Tools & Methods
+## 🛠️ Tools & Environment
 
-- **Static Analysis**: [SonarQube](https://www.sonarqube.org/) — default rule sets for TypeScript, Python, JavaScript, and Java
-- **Statistical Testing**: Mann–Whitney U test (non-parametric, 256 pairwise comparisons in RQ1)
-- **Modeling**: Partial Least Squares (PLS) regression for RQ3
-- **Visualization**: Heatmaps and matrix plots for RQ1 and RQ2
+| Tool | Purpose |
+|------|---------|
+| [SonarQube](https://www.sonarqube.org/) | Static code analysis — maintainability issue detection |
+| SonarQube Default Rules | TypeScript, Python, JavaScript, Java rule sets |
+| Python / R | Statistical analysis (Mann-Whitney U test, PLS) |
+| Excel / XLSX | Data storage and result presentation |
 
 ---
 
+## 📊 Key Visualizations
 
+**RQ1 — Issue Density Heatmap (AI vs. Human, C1–C16)**
+
+> `RQ1 experimental results/heatmap.png`
+
+Compares maintainability issue density between AI-assisted and human-written projects across 16 categories, 4 languages, and 4 project scales.
+
+**RQ2 — Severity Density Matrix**
+
+> `RQ2 experimental results/matrix_plot_bold.png`
+
+Visual matrix of average issue density at each severity level per language and scale.
+
+**RQ2 — Remediation Time Comparison**
+
+> `RQ2 experimental results/Remediation Time.png`
+
+Bar chart comparing average estimated fix time (technical debt) between AI and Human projects.
 
 ---
 
 ## 📬 Contact
 
-For questions or collaboration, please open an [issue](https://github.com/cantfindajob/Do-AI-Assisted-Projects-Write-Better-Code-/issues) on this repository.
+For questions or collaboration, please open an issue in this repository or reach out via GitHub: [@cantfindajob](https://github.com/cantfindajob)
+
+---
+
+## 📄 License
+
+This repository is for academic research purposes. Please cite this work if you use the dataset or results in your own research.
