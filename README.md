@@ -100,7 +100,7 @@ This RQ examines **severity-level issue density** and **estimated remediation ti
 | `Average of various languages and scales Issue Density.xlsx` | Average severity-level issue density matrix across all languages and scales |
 | `matrix_plot_bold.png` | Visual matrix plot of average issue density per severity level, language, and scale |
 | `Remediation Time.xlsx` | Estimated remediation time (technical debt) per project as reported by SonarQube |
-| `Remediation Time.png` | Bar chart comparing average remediation time between AI-assisted and human-written projects across all languages and scales |
+| `Remediation Time.png` |  comparing average remediation time between AI-assisted and human-written projects across all languages and scales |
 
 ---
 
