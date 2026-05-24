@@ -63,7 +63,7 @@ Located in `dataset/`
 
 ## 🔬 Research Questions & Experimental Results
 
-### RQ1 — Do AI-assisted projects have different maintainability issue density across categories?
+### RQ1: Maintainability Issue Density Analysis.
 
 Located in `RQ1 experimental results/`
 
@@ -84,7 +84,7 @@ This RQ investigates maintainability issue density across **16 categories (C1–
 
 ---
 
-### RQ2 — Do AI-assisted projects differ in issue severity and remediation effort?
+### RQ2:Issue Severity Density and Remediation Time Analysis.
 
 Located in `RQ2 experimental results/`
 
@@ -104,7 +104,7 @@ This RQ examines **severity-level issue density** and **estimated remediation ti
 
 ---
 
-### RQ3 — What project-level factors influence maintainability outcomes?
+### RQ3: Driver Analysis via PLS Regression.
 
 Located in `RQ3 experimental results/`
 
