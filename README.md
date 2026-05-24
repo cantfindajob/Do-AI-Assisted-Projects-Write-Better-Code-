@@ -117,18 +117,7 @@ The `RQ3 experimental results/` folder contains data and model outputs for a Par
 
 ---
 
-## 📌 Citation
 
-If you use this dataset or findings in your research, please cite this repository:
-
-```
-@misc{cantfindajob2025aicode,
-  author = {cantfindajob},
-  title  = {Do AI-Assisted Projects Write Better Code? An Empirical Study on Maintainability},
-  year   = {2025},
-  url    = {https://github.com/cantfindajob/Do-AI-Assisted-Projects-Write-Better-Code-}
-}
-```
 
 ---
 
