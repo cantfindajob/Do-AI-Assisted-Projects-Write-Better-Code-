@@ -5,7 +5,7 @@ This repository contains the dataset and experimental results for our comparativ
 
 The directory structure of this repository maps directly to the core components and evaluation sections of our study:
 
-```text
+
 ├── dataset/
 │   ├── Maintainability issues corresponding to each project.xlsx
 │   └── merged_repository_with_sonar_keys.xlsx
@@ -24,7 +24,7 @@ The directory structure of this repository maps directly to the core components 
 │   └── [PLS Results Files]
 └── README.md
 This repository contains the dataset and experimental results for our comparative empirical study evaluating the code quality and maintainability of AI-generated versus Human-written code. The study analyzes projects across four programming languages (Java, Python, JavaScript, TypeScript) and four distinct project scales (Small, MedSmall, Medium, Large) using SonarQube static analysis.
-
+```text
 ## Repository Structure
 
 ### `dataset/`
