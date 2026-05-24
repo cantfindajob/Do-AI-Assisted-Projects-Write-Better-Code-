@@ -58,7 +58,7 @@ Located in the `dataset/` folder:
 
 ## 🔬 Research Questions
 
-### RQ1 — Do AI-Assisted Projects Have Different Maintainability Issue Density Across Categories?
+### RQ1: Maintainability Issue Density Analysis.
 
 The `RQ1 experimental results/` folder contains maintainability issue density data organized by:
 
@@ -78,7 +78,7 @@ The `RQ1 experimental results/` folder contains maintainability issue density da
 
 ---
 
-### RQ2 — Do AI-Assisted Projects Differ in Severity of Maintainability Issues?
+### RQ2 — RQ2:Issue Severity Density and Remediation Time Analysis.
 
 The `RQ2 experimental results/` folder contains severity-level issue density data organized by:
 
@@ -96,7 +96,7 @@ The `RQ2 experimental results/` folder contains severity-level issue density dat
 
 ---
 
-### RQ3 — What Project Factors Influence Maintainability Issue Density?
+### RQ3: Driver Analysis via PLS Regression.
 
 The `RQ3 experimental results/` folder contains data and model outputs for a Partial Least Squares (PLS) analysis examining the relationship between project-level factors and maintainability outcomes.
 
