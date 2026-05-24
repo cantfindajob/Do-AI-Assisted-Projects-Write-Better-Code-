@@ -1,6 +1,28 @@
-
 # Do AI-Assisted Projects Write Better Code? An Empirical Study on Internal Quality of Real-World GitHub Repositorie
+This repository contains the dataset and experimental results for our comparative empirical study evaluating the code quality and maintainability of AI-generated versus Human-written code. The study analyzes projects across four programming languages (Java, Python, JavaScript, TypeScript) and four distinct project scales (Small, MedSmall, Medium, Large) using SonarQube static analysis.
 
+## Repository Structure
+
+The directory structure of this repository maps directly to the core components and evaluation sections of our study:
+
+```text
+├── dataset/
+│   ├── Maintainability issues corresponding to each project.xlsx
+│   └── merged_repository_with_sonar_keys.xlsx
+├── RQ1 experimental results/
+│   ├── [Category Issue Density Files]
+│   ├── ALL_Mann_Whitney_Results.xlsx
+│   ├── heatmap.png
+│   ├── sonarqube_Default_maintainability_rules.xlsx
+│   └── The number of corresponding rules for each category c.xlsx
+├── RQ2 experimental results/
+│   ├── [Severity Density Files]
+│   ├── Average of various languages and scales Issue Density.xlsx
+│   └── matrix_plot_bold.png
+├── RQ3 experimental results/
+│   ├── [Variables Datasets]
+│   └── [PLS Results Files]
+└── README.md
 This repository contains the dataset and experimental results for our comparative empirical study evaluating the code quality and maintainability of AI-generated versus Human-written code. The study analyzes projects across four programming languages (Java, Python, JavaScript, TypeScript) and four distinct project scales (Small, MedSmall, Medium, Large) using SonarQube static analysis.
 
 ## Repository Structure
